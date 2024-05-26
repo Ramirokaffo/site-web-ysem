@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class CourseConfig(AppConfig):
+class StaffConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'course'
-    verbose_name = "cours"
+    name = 'staff'
+    verbose_name ='personnel'
