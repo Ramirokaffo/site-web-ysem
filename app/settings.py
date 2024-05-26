@@ -10,9 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
-from pathlib import Path
-from .info import *
-import environ
+#from pathlib import Path
+#from .info import *
+#import environ
 
 
 
@@ -25,13 +25,13 @@ environ.Env.read_env(env_file=str(BASE_DIR / ".env"))
 
 
 
-EMAIL_USE_TLS = EMAIL_USE_TLS
+#MAIL_USE_TLS = EMAIL_USE_TLS
 # EMAIL_USE_SSL = EMAIL_USE_SSL
-EMAIL_HOST = EMAIL_HOST
-EMAIL_HOST_USER = EMAIL_HOST_USER
-EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
-EMAIL_PORT = EMAIL_PORT
-EMAIL_BACKEND = EMAIL_BACKEND
+#EMAIL_HOST = EMAIL_HOST
+#EMAIL_HOST_USER = EMAIL_HOST_USER
+#EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
+#EMAIL_PORT = EMAIL_PORT
+#EMAIL_BACKEND = EMAIL_BACKEND
 
 
 # Quick-start development settings - unsuitable for production
