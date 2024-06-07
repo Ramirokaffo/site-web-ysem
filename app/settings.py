@@ -96,26 +96,26 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
-DB_NAME = env("DB_NAME")
-DB_USER = env("DB_USER")
-DB_PASSWORD = env("DB_PASSWORD")
-DB_HOST = env("DB_HOST")
-DB_PORT = env("DB_PORT")
+# DB_NAME = env("DB_NAME")
+# DB_USER = env("DB_USER")
+# DB_PASSWORD = env("DB_PASSWORD")
+# DB_HOST = env("DB_HOST")
+# DB_PORT = env("DB_PORT")
 
 
-if DEBUG is True:
-    DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': DB_NAME,
-        'USER': DB_USER,
-        'PASSWORD': DB_PASSWORD,
-        'HOST': DB_HOST,
-        'PORT': DB_PORT,
-    }
-}
-else:
-    DATABASES = {
+# if DEBUG is False:
+#     DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': DB_NAME,
+#         'USER': DB_USER,
+#         'PASSWORD': DB_PASSWORD,
+#         'HOST': DB_HOST,
+#         'PORT': DB_PORT,
+#     }
+# }
+# else:
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
