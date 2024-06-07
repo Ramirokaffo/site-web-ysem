@@ -10,7 +10,7 @@ class Staff(models.Model):
     gender = models.CharField(blank=False, max_length=2, null=False, verbose_name="Sexe", choices=GENDER_CHOICE)
     born_date = models.DateField(blank=False, null=False, verbose_name='date de naissance')
     phone = models.CharField(blank=True, max_length=15, null=False, verbose_name="numéro de téléphone")
-    role = models.ForeignKey(Group, on_delete=models.SET_NULL, null=True, verbose_name="role de l'utilisateur")
+    # role = models.ForeignKey(Group, on_delete=models.SET_NULL, null=True, verbose_name="role de l'utilisateur")
     def __str__(self):
         return self.user
 
