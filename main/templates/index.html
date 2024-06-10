@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="ratio: false; autoplay: true; pause-on-hover: false">
+
+    <div class="uk-slideshow-items" uk-height-viewport="min-height: 300">
+        <div>
+            <img src="{% static 'images/2.jpg' %}" alt="" uk-cover>
+        </div>
+        <div>
+            <img src="{% static 'images/3.jpg' %}" alt="" uk-cover>
+        </div>
+        <div>
+            <img src="{% static 'images/4.jpg' %}" alt="" uk-cover>
+        </div>
+    </div>
+
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous
+        uk-slideshow-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href uk-slidenav-next
+        uk-slideshow-item="next"></a>
+
+    <div class="my_home_main_div">
+        <div class="my_home_form_div">
+            <img src="{% static 'images/ysemlogo.png' %}" alt="">
+
+            <a href="/admin">ESPACE PERSONNEL</a>
+            <a href="">ESPACE ETUDIANT</a>
+        </div>
+
+    </div>
+    <div class="my_home_header_div">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+<h1>BIENVENUE SUR LE SITE D'YSEM CHER 
+  <span
+     class="txt-rotate"
+     data-period="2000"
+     data-rotate='[ "PERSONNEL.", "ENSEIGNANT.", "ETUDIANT.", "ADMINISTRATEUR." ]'></span>
+</h1>
+    </div>
+</div>
+<script src="{% static 'js/script.js' %}"></script>
+
+{% endblock content %}
