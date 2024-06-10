@@ -44,24 +44,27 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 # ALLOWED_HOSTS = ["192.168.43.141"]
+# ALLOWED_HOSTS = ["192.168.100.50"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "app.apps.MyAdminConfig",
     'student',
     'department',
     'course',
     'course_program',
     'staff',
+    'main',
     'level',
     'courseOutLine',
+
 ]
 
 MIDDLEWARE = [
