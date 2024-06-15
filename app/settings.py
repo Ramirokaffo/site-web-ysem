@@ -62,8 +62,8 @@ INSTALLED_APPS = [
     'course_program',
     'staff',
     'main',
-    'level',
-    'courseOutLine',
+    # 'level',
+    # 'courseOutLine',
 
 ]
 

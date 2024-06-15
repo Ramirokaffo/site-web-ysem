@@ -8,7 +8,7 @@ class CourseOutline(models.Model):
         ("F", "Femme", )
     )
     enseignant = models.OneToOneField(User, on_delete=models.SET_NULL, null=True, verbose_name="Enseignant correspondant")
-    course = models.OneToOneField(Course, on_delete=models.SET_NULL, null=True, verbose_name="Cours correspondant")
+    course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True, verbose_name="Cours correspondant")
     ebook_file = models.FileField(blank=True, null=True, upload_to='ebook/pdf/%Y/%m/%d', verbose_name="plan de cours au format pdf")
     
     def __str__(self):

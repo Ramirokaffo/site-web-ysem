@@ -12,7 +12,7 @@ class Staff(models.Model):
     phone = models.CharField(blank=True, max_length=15, null=False, verbose_name="numéro de téléphone")
     # role = models.ForeignKey(Group, on_delete=models.SET_NULL, null=True, verbose_name="role de l'utilisateur")
     def __str__(self):
-        return self.user
+        return str(self.user)
 
     class Meta:
         verbose_name = "personnel"

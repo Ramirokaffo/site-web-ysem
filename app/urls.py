@@ -16,11 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import index
+from .views import index, cours_list
 from django.conf.urls.static import static
 from django.conf import settings 
+from django.views.generic.base import RedirectView
+from django.urls import re_path
+
+
+favicon_view = RedirectView.as_view(url='/static/favicon.ico', permanent=True)
 
 urlpatterns = [
     path('', index, name="index"),
+    path('cours_list/', cours_list, name="cours_list"),
     path('admin/', admin.site.urls),
+    re_path(r'^favicon\.ico$', favicon_view),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
