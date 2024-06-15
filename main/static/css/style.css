@@ -1,3 +1,5 @@
+
+
 .my_home_main_div {
     position: absolute;
     top: 0px;
@@ -85,4 +87,15 @@
     scale: 1.01;
     box-shadow: 3px 3px 3px black;
 
+}
+
+
+
+
+
+@media screen and (max-width: 901px) {
+
+    .my_home_header_div h1 {
+        font-size: 0.5em;    
+    }
 }

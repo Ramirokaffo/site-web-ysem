@@ -1,6 +1,8 @@
 from django.db import models
 from student.models import Student
 from staff.models import Staff
+from department.models import Department
+from course_program.models import CourseProgram
 from django.core.exceptions import ValidationError
 
 
@@ -30,7 +32,8 @@ class Course(models.Model):
     last_updated = models.DateTimeField(auto_now=True, verbose_name="dernière mise à jour")
     created_at = models.DateField(blank=True, null=True, auto_created=True, auto_now_add=True)
     level = models.ForeignKey(Level, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="niveau" )
-    # course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True, verbose_name="Cours correspondant")
+    department = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True, verbose_name="département")
+    program = models.ForeignKey(CourseProgram, on_delete=models.SET_NULL, null=True, verbose_name="proramme concerné")
 
     def __str__(self):
         return self.label
