@@ -22,6 +22,7 @@ class Level(models.Model):
     class Meta:
         verbose_name = "niveau d'étude"
         verbose_name_plural = "niveaux d'étude"
+        ordering = ['-created_at']
 
 
 
@@ -87,8 +88,8 @@ class TeacherSubmittedCourse(models.Model):
         return str(self.teacher_course)
 
     class Meta:
-        verbose_name = "cours soummis par l'enseignant"
-        verbose_name_plural = "cours soummis par les enseignants"
+        verbose_name = "support de cours"
+        verbose_name_plural = "supports de cours"
 
 
 

@@ -15,7 +15,7 @@ class Staff(models.Model):
         return str(self.user)
 
     class Meta:
-        verbose_name = "personnel"
-        verbose_name_plural = "membres du personnel"
+        verbose_name = "enseignant"
+        verbose_name_plural = "enseignants"
 
 
