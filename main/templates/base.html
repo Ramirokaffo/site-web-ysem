@@ -27,14 +27,15 @@
 
 
     {% block meta %}
-
     <meta property="og:title" content="{{ title }}" />
     <meta name="description"
-        content="Site de coaching et de développement personnel. On vous accompagne dans l'atteinte de vos objectifs à travers des programmes de coaching personnalisés" />
-    <meta property="og:image" content="{% static 'images/logo_site_vie_reussie.jpeg' %}" />
-    <meta property="og:image:secure_url" content="{% static 'images/logo_site_vie_reussie.jpeg' %}" />
+    content="YSEM est une école supérieure africaine qui se distingue par sa vision ambitieuse de contribuer à la transformation et à la prospérité de l'Afrique.  L'école se concentre sur la formation d'une élite africaine compétente et entreprenante, capable d'impacter positivement la société. " />
+    <meta property="og:image"
+        content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/ysemlogo.png' %}" />
+    <meta property="og:image:secure_url"
+        content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/ysemlogo.png' %}" />
     <meta property="og:image:alt" content="Le logo du site" />
-
+    
     {% endblock meta %}
 
     <link rel="stylesheet" href="{% static 'css/uikit.css' %}">

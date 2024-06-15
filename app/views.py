@@ -7,8 +7,8 @@ from django.template.loader import render_to_string
 from xhtml2pdf import pisa
 
 def index(request: WSGIRequest):
-    
-    return render(request=request, template_name="index.html")
+    context = {"title": "Site d'administration d'YSEM"}
+    return render(request=request, template_name="index.html", context=context)
 
 
 

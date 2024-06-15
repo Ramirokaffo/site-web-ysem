@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import environ
+import os
 
 
 
@@ -40,12 +41,15 @@ environ.Env.read_env(env_file=str(BASE_DIR / ".env"))
 SECRET_KEY = 'django-insecure-j2o5-6_5zx@x(!2m(gk23kz@=xquvi5_hu9!gu_r(6g+19%n=d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 # ALLOWED_HOSTS = ["192.168.43.141"]
 # ALLOWED_HOSTS = ["192.168.100.50"]
 
+SECRET_KEY = env("SECRET_KEY")
+DEBUG = env.bool("DEBUG")
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
 # Application definition
 
@@ -151,9 +155,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'fr-FR'
 
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'fr-fr'
+
+TIME_ZONE = 'Africa/Douala'
 
 USE_I18N = True
 
@@ -164,8 +169,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+# STATIC_ROOT = BASE_DIR / "static"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+MEDIA_URL = "/media/"
+# MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+ADMINS = [("Ramiro kaffo", "ramirokaffo@icloud.com"), ]
