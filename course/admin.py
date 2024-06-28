@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Course, StudentCourse, Level, TeacherCourse, TeacherSubmittedCourse
+from .models import Course, Level, TeacherCourse, TeacherSubmittedCourse
 from xhtml2pdf import pisa
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
@@ -18,9 +18,9 @@ class LevelAdmin(admin.ModelAdmin):
 
 class CourseAdmin(admin.ModelAdmin):
 
-    list_display = ("label", "creditCount", "created_at", "last_updated", "level")
+    list_display = ("label", "creditCount", "created_at", "last_updated", "level", "semester")
     date_hierarchy = "created_at"
-    list_filter = ["creditCount", "level"]
+    list_filter = ["semester", "level", "creditCount"]
     save_as = True
     save_on_top = True
     search_fields = ["label", "description", "level__label"]
@@ -57,16 +57,16 @@ class CourseAdmin(admin.ModelAdmin):
         # return HttpResponseRedirect("/cours_list/")
 
 
-class StudentCourseAdmin(admin.ModelAdmin):
+# class StudentCourseAdmin(admin.ModelAdmin):
 
-    list_display = ("course", "student", "note", "created_at", "last_updated", )
-    date_hierarchy = "created_at"
-    list_filter = ["student", "course", "course__level"]
-    save_as = True
-    save_on_top = True
-    search_fields = ["student__matricule","student__user__first_name",  "course__label"]
-    search_help_text = "Rechercher via le label du cours ou le nom de l'étudiant"
-    autocomplete_fields = ["course", "student"]
+#     list_display = ("course", "student", "note", "created_at", "last_updated", )
+#     date_hierarchy = "created_at"
+#     list_filter = ["student", "course", "course__level"]
+#     save_as = True
+#     save_on_top = True
+#     search_fields = ["student__matricule","student__user__first_name",  "course__label"]
+#     search_help_text = "Rechercher via le label du cours ou le nom de l'étudiant"
+#     autocomplete_fields = ["course", "student"]
 
 
 class TeacherCourseAdmin(admin.ModelAdmin):
@@ -140,7 +140,7 @@ class TeacherSubmittedCourseAdmin(admin.ModelAdmin):
 
 admin.site.register(Level, LevelAdmin)
 admin.site.register(Course, CourseAdmin)
-admin.site.register(StudentCourse, StudentCourseAdmin)
+# admin.site.register(StudentCourse, StudentCourseAdmin)
 admin.site.register(TeacherCourse, TeacherCourseAdmin)
 admin.site.register(TeacherSubmittedCourse, TeacherSubmittedCourseAdmin)
 

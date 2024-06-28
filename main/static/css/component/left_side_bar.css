@@ -1,0 +1,42 @@
+
+
+.ysem_logo_div img {
+    /* width: 80%; */
+    
+}
+
+.student_left_side_bar ul {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 30px;
+
+}
+
+.student_left_side_bar ul li {
+    /* background-color: red; */
+    box-sizing: border-box;
+
+}
+
+.student_left_side_bar ul li a {
+    /* background-color: green; */
+    /* margin: 5px; */
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    /* border-radius: 10px; */
+    padding: 10px;
+    color: white;
+    gap: 10px;
+}
+
+.selected_tab {
+    background-color: var(--color2);
+
+}
+
+.selected_tab  a {
+    color: var(--yellow-color) !important;
+
+}

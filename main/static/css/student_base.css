@@ -1,0 +1,24 @@
+
+.main_base {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.main_base {
+    display: flex;
+    align-items: stretch;
+    height: 100vh;
+}
+
+
+.student_left_side_bar {
+    flex: 1;
+    background-color: var(--color1);
+}
+
+.student_right_side_bar {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    /* background-color: green; */
+    overflow-y: scroll;
+}

@@ -27,6 +27,10 @@ class Level(models.Model):
 
 
 class Course(models.Model):
+    SEMESTER_CHOICE = {
+        (1, "Semestre 1"),
+        (2, "Semestre 2"),
+    }
     label = models.CharField(max_length=255, null=True, unique=True, verbose_name="label")
     description = models.TextField(blank=True, null=True, verbose_name="description")
     creditCount = models.IntegerField(blank=False, null=False, verbose_name="crédit")
@@ -35,7 +39,8 @@ class Course(models.Model):
     level = models.ForeignKey(Level, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="niveau" )
     department = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True, verbose_name="département")
     program = models.ForeignKey(CourseProgram, on_delete=models.SET_NULL, null=True, verbose_name="proramme concerné")
-
+    semester = models.IntegerField(null=False, blank=False, choices=SEMESTER_CHOICE, verbose_name="semestre", default=1)
+    
     def __str__(self):
         return self.label
 
@@ -44,21 +49,21 @@ class Course(models.Model):
         verbose_name_plural = "cours"
 
 
-class StudentCourse(models.Model):
-    course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True, verbose_name="cours")
-    student = models.ForeignKey(Student, on_delete=models.SET_NULL, null=True, verbose_name="étudiant")
-    note = models.FloatField(blank=True, max_length=15, null=True, verbose_name="note de l'étudiant")
-    appreciation = models.TextField(blank=True, max_length=500, null=True, verbose_name="appréciation")
-    last_updated = models.DateTimeField(auto_now=True, verbose_name="dernière mise à jour")
-    created_at = models.DateField(blank=True, null=True, auto_created=True, auto_now_add=True)
-    catching_up = models.BooleanField(null=False, verbose_name="rattrapé", default=False)
+# class StudentCourse(models.Model):
+    # course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True, verbose_name="cours")
+    # student = models.ForeignKey(Student, on_delete=models.SET_NULL, null=True, verbose_name="étudiant")
+    # note = models.FloatField(blank=True, max_length=15, null=True, verbose_name="note de l'étudiant")
+    # appreciation = models.TextField(blank=True, max_length=500, null=True, verbose_name="appréciation")
+    # last_updated = models.DateTimeField(auto_now=True, verbose_name="dernière mise à jour")
+    # created_at = models.DateField(blank=True, null=True, auto_created=True, auto_now_add=True)
+    # catching_up = models.BooleanField(null=False, verbose_name="rattrapé", default=False)
 
-    def __str__(self):
-        return self.course.label + " ~ " + self.student.user.username
+    # def __str__(self):
+    #     return self.course.label + " ~ " + self.student.user.username
 
-    class Meta:
-        verbose_name = "cours attribué à l'étudiant"
-        verbose_name_plural = "cours attribués aux étudiants"
+    # class Meta:
+    #     verbose_name = "accès l'étudiant"
+    #     verbose_name_plural = "cours attribués aux étudiants"
 
 
 class TeacherCourse(models.Model):

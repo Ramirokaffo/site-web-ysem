@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/student_base.css' %}">
+
+
+
+<main class="main_base">
+    <section class="student_left_side_bar">
+        {% include "component/left_side_bar.html" %}
+
+    </section>
+    <section class="student_right_side_bar">
+        {% include "component/header.html" %}
+        {% block student_content %}
+          
+        {% endblock student_content %}
+    {% include "component/footer.html" %}
+    </section>
+
+</main>
+
+
+
+{% endblock content %}
