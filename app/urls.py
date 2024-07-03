@@ -30,5 +30,6 @@ urlpatterns = [
     path('cours_list/', cours_list, name="cours_list"),
     path('admin/', admin.site.urls),
     path("student/", include("student.urls")),
+    path("inscription/", include("inscription.urls")),
     re_path(r'^favicon\.ico$', favicon_view),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

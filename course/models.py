@@ -1,5 +1,4 @@
 from django.db import models
-from student.models import Student
 from staff.models import Staff
 from department.models import Department
 from course_program.models import CourseProgram
@@ -47,23 +46,6 @@ class Course(models.Model):
     class Meta:
         verbose_name = "cours"
         verbose_name_plural = "cours"
-
-
-# class StudentCourse(models.Model):
-    # course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True, verbose_name="cours")
-    # student = models.ForeignKey(Student, on_delete=models.SET_NULL, null=True, verbose_name="étudiant")
-    # note = models.FloatField(blank=True, max_length=15, null=True, verbose_name="note de l'étudiant")
-    # appreciation = models.TextField(blank=True, max_length=500, null=True, verbose_name="appréciation")
-    # last_updated = models.DateTimeField(auto_now=True, verbose_name="dernière mise à jour")
-    # created_at = models.DateField(blank=True, null=True, auto_created=True, auto_now_add=True)
-    # catching_up = models.BooleanField(null=False, verbose_name="rattrapé", default=False)
-
-    # def __str__(self):
-    #     return self.course.label + " ~ " + self.student.user.username
-
-    # class Meta:
-    #     verbose_name = "accès l'étudiant"
-    #     verbose_name_plural = "cours attribués aux étudiants"
 
 
 class TeacherCourse(models.Model):

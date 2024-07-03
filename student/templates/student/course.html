@@ -1,0 +1,41 @@
+{% extends "student_base.html" %}
+{% load static %}
+
+
+{% block student_content %}
+<link rel="stylesheet" href="{% static 'student/course.css' %}">
+
+<div class="student_home_page_div">
+    <section class="my_course_table">
+        <div class="table_header">
+            <label class="checkbox_container">
+                <input type="checkbox">
+                <div class="checkmark"></div>
+            </label>
+            <h5>Titres<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M12.832 3.445a1 1 0 0 0-1.664 0l-4 6A1 1 0 0 0 8 11h8a1 1 0 0 0 .832-1.555l-4-6Zm-1.664 17.11a1 1 0 0 0 1.664 0l4-6A1 1 0 0 0 16 13H8a1 1 0 0 0-.832 1.555l4 6Z" clip-rule="evenodd"/>
+              </svg>
+              </h5>
+            <p>Niveau<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M12.832 3.445a1 1 0 0 0-1.664 0l-4 6A1 1 0 0 0 8 11h8a1 1 0 0 0 .832-1.555l-4-6Zm-1.664 17.11a1 1 0 0 0 1.664 0l4-6A1 1 0 0 0 16 13H8a1 1 0 0 0-.832 1.555l4 6Z" clip-rule="evenodd"/>
+              </svg>
+              </p>
+            <a href="">Action</a>
+        </div>
+        {% for course in courses %}
+        <div class="table_row row_{% cycle 'odd' 'even' %}">
+            <label class="checkbox_container">
+                <input type="checkbox">
+                <div class="checkmark"></div>
+            </label>
+            <h5>{{ course.label }}</h5>
+            <p>{{ course.level }}</p>
+            <a href="">Télecharger support</a>
+        </div>
+        {% empty %}
+
+        {% endfor %}
+    </section>
+</div>
+
+{% endblock student_content %}
