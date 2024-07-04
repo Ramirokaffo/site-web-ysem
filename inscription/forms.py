@@ -2,8 +2,6 @@ from django import forms
 
 
 class InscriptionForm(forms.Form):
-    your_name = forms.CharField(label="Your name", max_length=100)
-
     first_name = forms.CharField(max_length=255, label="nom")
     last_name = forms.CharField(max_length=255, label="prénom")
     email = forms.EmailField(label="email")

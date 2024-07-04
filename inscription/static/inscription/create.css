@@ -1,0 +1,41 @@
+
+
+.inscription_form_div {
+  background-color: rgba(0, 99, 141, 0.05);
+  padding: 50px 20%;
+  box-sizing: border-box;
+}
+
+.inscription_form {
+    background-color: white;
+  box-shadow: 0px 2px 5px #ccc;
+  box-sizing: border-box;
+  border-top: 20px solid var(--color2);
+  padding: 20px;
+  border-radius: 10px;
+
+} 
+
+
+.inscription_form .fieldWrapper {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px;
+
+}
+
+.inscription_form .fieldWrapper label {
+  font-weight: bold;
+}
+
+
+.inscription_form .fieldWrapper input, .inscription_form .fieldWrapper textarea {
+  background-color: rgba(0, 99, 141, 0.05);
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 1px #ccc;
+
+}

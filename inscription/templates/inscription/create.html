@@ -1,6 +1,14 @@
+{% extends "base.html" %}
 
-
-<form action="" method="post">
+{% load static %}
+<!-- <link rel="stylesheet" href="{% static 'student/course.css' %}"> -->
+{% block content %}
+  
+<link rel="stylesheet" href="{% static 'inscription/create.css' %}">
+<div class="inscription_form_div">
+<form action="" method="post" class="inscription_form">
     {% csrf_token %}
     {{ form }}
 </form>
+</div>
+{% endblock content %}
